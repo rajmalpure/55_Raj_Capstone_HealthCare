@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = process.env.PUBLIC_PORT || 3000;
+const defaultPort = 3000;
+const port = process.env.PUBLIC_PORT || defaultPort;
 
 // define the ping route
 app.get('/ping', (req, res) => {
