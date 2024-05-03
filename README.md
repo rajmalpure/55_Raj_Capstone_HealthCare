@@ -26,3 +26,6 @@
 	Day 3 - High fid design
 
  * Backend deploed link :- https://five5-raj-capstone-healthcare-3.onrender.com/ping
+
+ * Frontend server deployed link :- https://react-8lyla4w1m-rajs-projects-02a1ec89.vercel.app/
+
