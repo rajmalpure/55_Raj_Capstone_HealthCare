@@ -19,7 +19,6 @@ router.get('/doctor', async (req, res) => {
   });
   
 
-
   router.get('/patients', async (req, res) => {
     try {
       const patients = await Patient.find();
@@ -28,6 +27,28 @@ router.get('/doctor', async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch patients' });
     }
   });
+
+  router.post('/doctors', async (req, res) => {
+    try {
+      const newDoctor = new Doctor(req.body);
+      await newDoctor.save();
+      res.status(201).json({ message: 'Doctor added successfully', doctor: newDoctor });
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to create doctor' });
+    }
+  });
+
+  
+  router.post('/patients', async (req, res) => {
+    try {
+      const newPatient = new Patient(req.body);
+      await newPatient.save();
+      res.status(201).json({ message: 'Patient added successfully', patient: newPatient });
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to create patient' });
+    }
+  });
+
 
 
 module.exports = router;
