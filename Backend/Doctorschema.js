@@ -7,6 +7,6 @@ const doctorSchema = new mongoose.Schema({
         Specialization : String
 })
 
-const Doctor = mongoose.model('doctor', doctorSchema);
+const Doctor = mongoose.model('doctors', doctorSchema);
 
 module.exports = {Doctor}

@@ -8,14 +8,13 @@ const dotenv = require('dotenv').config();
 const connection = process.env.URI;
 
 // Connect to MongoDB
-mongoose.connect(connection, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(connection)
   .then(() => {
     console.log('Connected to MongoDB database');
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
   });
-
 
 // define the ping route
 app.get('/ping', (req, res) => {
