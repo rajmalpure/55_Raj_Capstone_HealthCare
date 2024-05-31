@@ -8,6 +8,6 @@ const patientSchema = new mongoose.Schema({
         Treatment_details : String
 })
 
-const Patient = mongoose.model('patient', patientSchema);
+const Patient = mongoose.model('patients', patientSchema);
 
 module.exports = {Patient}
