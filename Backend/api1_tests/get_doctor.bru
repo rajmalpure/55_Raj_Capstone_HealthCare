@@ -1,0 +1,21 @@
+meta {
+  name: get_doctor
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/doctor
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "_id": "6644a7c9b32677042498b356",
+    "Name": "Dr. Emily Johnson",
+    "Email": "emily.johnson@example.com",
+    "Password": "doctorpass2",
+    "Specialization": "Pediatrics"
+  }
+}

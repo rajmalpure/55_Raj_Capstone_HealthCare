@@ -2,6 +2,10 @@
 import React from 'react';
 import Home from './components/Home';
 
+
+import React from 'react';
+import Home from './components/Home';
+
 function App() {
   return (
     <div>
@@ -11,3 +15,4 @@ function App() {
 }
 
 export default App
+

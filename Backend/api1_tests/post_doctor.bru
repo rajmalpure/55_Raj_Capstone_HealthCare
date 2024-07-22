@@ -1,0 +1,20 @@
+meta {
+  name: post_doctor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/doctors
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Name": "Dr. Emily Johnson",
+    "Email": "emily.johnson@example.com",
+    "Password": "doctorpass2",
+    "Specialization": "Pediatrics"
+  }
+}

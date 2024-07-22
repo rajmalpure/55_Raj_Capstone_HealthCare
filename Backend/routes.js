@@ -88,6 +88,7 @@ router.delete('/patients/:id', async (req, res) => {
     res.json({ message: 'Patient deleted successfully' });
   } catch (error) {
     handleErrors(res, error);
+
   }
 });
 
