@@ -21,8 +21,6 @@ router.get('/doctor', async (req, res) => {
   }
 });
 
-//api tests performed on bruno
-
 router.get('/patient', async (req, res) => {
   try {
     const patients = await Patient.find();
@@ -90,7 +88,7 @@ router.delete('/patients/:id', async (req, res) => {
     res.json({ message: 'Patient deleted successfully' });
   } catch (error) {
     handleErrors(res, error);
-    
+
   }
 });
 
