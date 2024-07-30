@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Doctor } = require('./Doctorschema');
 const { Patient } = require('./Userschema');
+const { Signup } = require('./signupschema');
 require('dotenv').config();
 
 router.use(express.json());
@@ -93,5 +94,45 @@ router.delete('/patients/:id', async (req, res) => {
     
   }
 });
+
+router.post('/signup', async (req, res) => {
+  try {
+      const { username, password } = req.body;
+      const newUser = await Signup.create({
+          username: username,
+          password: password
+      });
+      res.status(201).json(newUser);
+  } catch (err) {
+      console.error('Error in user signup:', err);
+      res.status(500).json({ error: err.message || 'Internal Server Error' });
+  }
+});
+
+router.get('/sign', async (req, res) => {
+  try {
+    const users = await Signup.find();
+    res.json(users);
+  } catch (error) {
+    handleErrors(res, error);
+  }
+});
+
+
+router.post('/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const user = await Signup.findOne({ username: username, password: password });
+    if (user) {
+      res.status(200).json({ message: 'Login successful', user });
+    } else {
+      res.status(401).json({ error: 'Invalid username or password' });
+    }
+  } catch (err) {
+    console.error('Error in user login:', err);
+    res.status(500).json({ error: err.message || 'Internal Server Error' });
+  }
+});
+
 
 module.exports = router;
