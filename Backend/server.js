@@ -7,6 +7,10 @@ const port = process.env.PUBLIC_PORT || defaultPort;
 const dotenv = require('dotenv').config();
 const connection = process.env.URI;
 
+
+const cors = require('cors')
+app.use(cors())
+
 // Connect to MongoDB
 mongoose.connect(connection)
   .then(() => {
