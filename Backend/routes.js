@@ -31,6 +31,13 @@ router.get('/patient', async (req, res) => {
   }
 });
 
+router.get('/patient/:id', async (req,res) => {
+  const _id = req.params.id
+  Patient.findById({_id})
+  .then(signupCollections => res.json(signupCollections))
+  .catch(err => console.log(err))
+})
+
 router.post('/doctors', async (req, res) => {
   try {
     const newDoctor = new Doctor(req.body);
