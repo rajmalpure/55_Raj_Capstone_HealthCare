@@ -1,0 +1,106 @@
+/* Home.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-container {
+    background-image: url('../assets/capstone1.avif'); 
+    /* Adjust the path if necessary */
+    background-size: cover;
+    background-position: center;
+    height: 46vw;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(120, 210, 144, 0.7);
+    padding: 10px 20px;
+  }
+  
+  .navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar-links li {
+    display: inline;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar-links a:hover {
+    color: #ddd;
+  }
+  
+  .home-header {
+    margin-top: 50px;
+  }
+  
+  .home-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .home-description {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .home-buttons {
+    margin: 20px 0;
+  }
+  
+  .home-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .home-info {
+    margin: 40px auto;
+    max-width: 600px;
+    background-color: rgba(222, 208, 208, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .home-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .home-info li {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  

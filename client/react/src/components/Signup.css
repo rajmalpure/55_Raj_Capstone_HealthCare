@@ -1,0 +1,69 @@
+
+
+.formpage {
+    background-image: url('../assets/capstone1.avif'); 
+    /* Adjust the path if necessary */
+    background-size: cover;
+    background-position: center;
+    height: 695px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+.form-container {
+    margin-top: 100px;
+    background-color: #f0f0f0; 
+    width: 500px;
+    height: 300px;
+    padding: 50px;
+    margin-left: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #000;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; 
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+  }
+
+
+  .error {
+    color: #dc3545; 
+    margin-top: 5px;
+  }
+  
+  .button {
+    height: 50px;
+    width: 130px;
+    margin-left: 180px;
+    background-color: #19a531; 
+    color: #fff; 
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    font-size: medium;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
