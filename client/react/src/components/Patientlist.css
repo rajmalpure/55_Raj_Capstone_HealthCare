@@ -1,0 +1,162 @@
+.home-content {
+  background-size: 100vh;
+  z-index: -1;
+  overflow-y: scroll;
+  background-image: url('../assets/capstone1.avif'); 
+  /* Adjust the path if necessary */
+  background-size: cover;
+  background-position: center;
+  height: 46vw;
+  text-align: center;
+}
+
+.nav {
+  background-color: #333;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  height: 100px;
+  font-size: 25px;
+  position: relative; 
+}
+
+.login{
+  background-color: #728fdd;
+  font-size: 17px;
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; 
+  margin-left: 50px;
+  top: 30%; 
+}
+
+
+select{
+  width: 15vw;
+  height: 2vw;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+
+.form-btn {
+  background-color: #007bff;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 13px 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 100px; 
+  right: 80px; 
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid #080505;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background-color: rgb(151, 195, 231);
+  width: 800px;
+  margin: 50px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  width: 250px;
+  height: 300px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.info {
+  padding: 10px;
+}
+
+h2 {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-size: 25px;
+  color: rgb(12, 75, 193);
+}
+
+ul {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  list-style-type: none;
+  padding: 0;
+  font-size: 15px;
+  font-style: italic;
+  font-weight:500;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.btns {
+  display: flex;
+  gap: 50px; 
+}
+
+.update {
+  padding: 8px 12px;
+  margin-left: 15px;
+  background-color: #4caf50; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete {
+  padding: 8px 12px;
+  background-color: #4caf50; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.medication{
+  padding: 8px 12px;
+  background-color: #4caf50; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.update:hover,
+.delete:hover {
+  background-color: #45a049; 
+}
+
+.delete {
+  background-color: #f44336; 
+}
+
+.delete:hover {
+  background-color: #d32f2f;
+}
+
