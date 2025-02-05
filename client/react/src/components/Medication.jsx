@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
-import './Signup.css';
+import './signup_styles.css';
 
 function Medication() {
   const [email, setEmail] = useState('');
