@@ -23,9 +23,9 @@ Secure Data Management: Built with patient privacy and data security as top prio
 
 Technology Stack:-
 
-Frontend: React.js, CSS3
-Backend: Node.js, Express
-Database: MongoDB
+Frontend: React.js, CSS3;
+Backend: Node.js, Express;
+Database: MongoDB;
 Deployment: Vercel
 
 Deployed link :- https://react-gvjd89lgm-rajs-projects-02a1ec89.vercel.app/
