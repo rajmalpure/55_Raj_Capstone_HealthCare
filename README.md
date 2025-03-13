@@ -1,6 +1,12 @@
 ## Healthcare Monitoring System
-
+** Home page:
 ![image](https://github.com/user-attachments/assets/6978d23c-b7f6-4d47-bdd7-33fb2b5fec1d)
+
+Patient list page:
+![image](https://github.com/user-attachments/assets/988bf026-2385-4233-9cb4-3a1e32e1c123)
+
+Medication page:
+![image](https://github.com/user-attachments/assets/0423aa97-1e79-400a-b101-eb8ebcd28441)
 
 A comprehensive digital solution for tracking patient treatment details.
 Overview
