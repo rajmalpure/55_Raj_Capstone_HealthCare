@@ -9,11 +9,13 @@ function Patientlist() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedUser, setSelectedUser] = useState("All");
   const [uniqueUsers, setUniqueUsers] = useState(["All"]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         console.log("Fetching patient data...");
         const response = await axios.get(`https://five5-raj-capstone-healthcare-4.onrender.com/patient`);
         console.log("Patient data response:", response);
@@ -26,9 +28,11 @@ function Patientlist() {
 
         const users = ["All", ...new Set(data.map(item => item.created_by).filter(Boolean))];
         setUniqueUsers(users);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching patient data:", error);
         setError(error.message);
+        setLoading(false);
       }
     };
 
@@ -54,11 +58,12 @@ function Patientlist() {
   const filteredEntries = patientdata.filter(item => selectedUser === "All" || item.created_by === selectedUser);
 
   return (
-    <div className="home-content">
-      <div className="nav">
-        <div className='form'>
+    <div className="patient-page">
+      <header className="page-header">
+        <h1>Patient Management System</h1>
+        <div className="auth-section">
           {isLoggedIn ? (
-            <button className='login' onClick={() => {
+            <button className="btn logout-btn" onClick={() => {
               sessionStorage.removeItem('login');
               setIsLoggedIn(false);
               navigate("/Login");
@@ -66,54 +71,77 @@ function Patientlist() {
           ) : (
             <>
               <Link to="/Login">
-                <button className='login'>Login</button>
+                <button className="btn login-btn">Login</button>
               </Link>
               <Link to="/Signup">
-                <button className='signup'>Signup</button>
+                <button className="btn signup-btn">Signup</button>
               </Link>
             </>
           )}
         </div>
-        {error && <p className="error-message">{error}</p>}
+      </header>
 
+      {error && <div className="error-message">{error}</div>}
+      
+      <div className="control-bar">
         {isLoggedIn && (
-          <div className="filter">
-            <select value={selectedUser} onChange={e => setSelectedUser(e.target.value)}>
+          <div className="filter-section">
+            <label htmlFor="user-filter">Filter by Provider:</label>
+            <select 
+              id="user-filter" 
+              value={selectedUser} 
+              onChange={e => setSelectedUser(e.target.value)}
+            >
               {uniqueUsers.map(user => (
-                <option key={user} value={user}>{user}</option>
+                <option key={user} value={user}>{user || "Unassigned"}</option>
               ))}
             </select>
           </div>
         )}
       </div>
-      <div className="container">
-        {filteredEntries.length === 0 ? (
-          <p>No patients found.</p>
-        ) : (
-          filteredEntries.map((patientSchema) => (
-            <div key={patientSchema._id} className="card">
 
-              <div className="info">
-                <ul>
-                  <li>Name: {patientSchema.Name}</li>
-                  <li>Email: {patientSchema.Email}</li>
-                  <li>Medical history: {patientSchema.Medical_history}</li>
-                  <li>Treatment details: {patientSchema.Treatment_details}</li>
-                </ul>
-                <div className="btns">
+      {loading ? (
+        <div className="loading">Loading patient data...</div>
+      ) : (
+        <div className="patient-grid">
+          {filteredEntries.length === 0 ? (
+            <div className="no-data-message">No patients found.</div>
+          ) : (
+            filteredEntries.map((patientSchema) => (
+              <div key={patientSchema._id} className="patient-card">
+                <div className="patient-card-header">
+                  <h3>{patientSchema.Name}</h3>
+                </div>
+
+                <div className="patient-details">
+                  <div className="detail-row">
+                    <span className="detail-label">Email:</span>
+                    <span className="detail-value">{patientSchema.Email}</span>
+                  </div>
+                  <div className="detail-row">
+                    <span className="detail-label">Medical History:</span>
+                    <span className="detail-value">{patientSchema.Medical_history}</span>
+                  </div>
+                  <div className="detail-row">
+                    <span className="detail-label">Treatment Details:</span>
+                    <span className="detail-value">{patientSchema.Treatment_details}</span>
+                  </div>
+                </div>
+                
+                <div className="patient-actions">
                   <Link to={`/patients/${patientSchema._id}`}>
-                    <button className="update">Update</button>
+                    <button className="btn update-btn">Update</button>
                   </Link>
-                  <button className="delete" onClick={() => deleteItem(patientSchema._id)}>Delete</button>
+                  <button className="btn delete-btn" onClick={() => deleteItem(patientSchema._id)}>Delete</button>
                   <Link to={`/medication`}>
-                    <button className="medication">Medication</button>
+                    <button className="btn medication-btn">Medication</button>
                   </Link>
                 </div>
               </div>
-            </div>
-          ))
-        )}
-      </div>
+            ))
+          )}
+        </div>
+      )}
     </div>
   );
 }

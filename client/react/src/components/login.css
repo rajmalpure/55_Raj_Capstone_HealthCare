@@ -4,14 +4,15 @@
 /* Full Page Background */
 body, html {
     height: 100%;
-    margin: 0;
+    margin: 200;
     font-family: 'Poppins', sans-serif;
 }
 
 /* Animated Background */
-.formpage {
-    padding-right: 500px;
-    height: 100vh;
+.form-container {
+    margin-top: 70px;
+    margin-left: 500px;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,8 +28,8 @@ body, html {
     100% { background-position: 0% 50%; }
 }
 
-/* Glassmorphism Form Container */
-.form-container {
+/* Glassmorphism Login Box */
+.form {
     background: rgba(255, 255, 255, 0.15);
     padding: 40px;
     border-radius: 12px;
@@ -38,7 +39,7 @@ body, html {
     width: 350px;
 }
 
-/* Form Styling */
+/* Form Labels */
 .form label {
     font-weight: 600;
     color: #fff;
@@ -66,14 +67,14 @@ body, html {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Input Field Focus Effect */
+/* Input Focus Effect */
 .form input:focus {
     border: 2px solid #38a3a5;
     box-shadow: 0px 0px 10px rgba(56, 163, 165, 0.6);
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Signup Button */
+/* Login Button */
 .button {
     width: 100%;
     padding: 12px;
@@ -99,7 +100,7 @@ body, html {
 }
 
 /* Error Message */
-.error {
+.error-message {
     color: #ff4d4d;
     font-size: 14px;
     margin-top: -10px;
@@ -108,7 +109,7 @@ body, html {
 
 /* Responsive Design */
 @media (max-width: 400px) {
-    .form-container {
+    .form {
         width: 90%;
         padding: 30px;
     }
