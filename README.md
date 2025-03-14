@@ -14,14 +14,14 @@ Overview:
 The Healthcare Monitoring System is an innovative platform designed to provide healthcare professionals with real-time visibility into patient treatment information. The system centralizes treatment plans, medication schedules, progress notes, and outcome measurements in an intuitive interface.
 Currently in the concept stage, this project aims to revolutionize how healthcare providers track, manage, and analyze patient care information.
 
-Features:-
+## 🎯 Features:-
 
 Comprehensive Treatment Tracking: Monitor all aspects of patient care from initial diagnosis through ongoing treatment
 Real-time Updates: Access the most current treatment information when it matters most
 User-friendly Interface: Designed with healthcare professionals in mind for maximum efficiency
 Secure Data Management: Built with patient privacy and data security as top priorities
 
-Technology Stack:-
+##  🛠️ Technology Stack:-
 
 Frontend: React.js, CSS3;
 Backend: Node.js, Express;
